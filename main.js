@@ -45,7 +45,7 @@ if (ready == "SI") {
 }
 
 while (ready != "NO") {
-    let articulo = prompt("Agrega el nombre del artículo que deseas:\n ANIMAL\n GORRO\njoya BUFANDA\n LLAVERO\n JOYA").toUpperCase();
+    let articulo = prompt("Agrega el nombre del artículo que deseas:\n ANIMAL\n GORRO\n BUFANDA\n LLAVERO\n JOYA").toUpperCase();
     let precio = 0;
 
     if (
@@ -112,7 +112,6 @@ function agregarCliente() {
 
     clientes.push(new Cliente (nombreFiscal, rfc, domicilioFiscal))
     alert(`Nombre o razón social: ${nombreFiscal} RFC: ${rfc} Dirección ${domicilioFiscal}`);
-    console.log(clientes);
 
     alert('Ups!! Falta agregar el número de teléfono');
 
@@ -177,11 +176,15 @@ while (ready1 != "SI" && ready1 != "NO") {
     ready1 = prompt('¿Deseas agregar otro dato? Si / No').toUpperCase();
 }
 
-if (ready1 != "NO") {
+while (ready1 != "NO") {
     const altaCliente = agregarCliente();
     console.log(altaCliente);
-} else if (ready1 == "NO") {
-    alert('Continuemos')
+    ready1 = prompt('¿Deseas agregar otro cliente? Si / No').toUpperCase();
+}
+
+    while (ready1 == "NO") {
+    alert('Continuemos');
+    break;
 }
 
 
