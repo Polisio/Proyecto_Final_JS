@@ -45,7 +45,7 @@ if (ready == "SI") {
 }
 
 while (ready != "NO") {
-    let articulo = prompt("Agrega el nombre del artículo que deseas:").toUpperCase();
+    let articulo = prompt("Agrega el nombre del artículo que deseas:\n ANIMAL\n GORRO\njoya BUFANDA\n LLAVERO\n JOYA").toUpperCase();
     let precio = 0;
 
     if (
