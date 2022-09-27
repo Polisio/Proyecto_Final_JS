@@ -1,0 +1,34 @@
+{
+  "name": "cuchurrincon",
+  "css_prefix_text": "icon-",
+  "css_use_suffix": false,
+  "hinting": true,
+  "units_per_em": 1000,
+  "ascent": 850,
+  "glyphs": [
+    {
+      "uid": "cba6018f5de17c76f70b7d2c06037e5a",
+      "css": "mail",
+      "code": 59392,
+      "src": "websymbols"
+    },
+    {
+      "uid": "9d3e9faf68fd4e12def853f0d4e1173b",
+      "css": "whatsapp",
+      "code": 62002,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "33cea6d7bd699348c0d593e105361a51",
+      "css": "facebook",
+      "code": 59393,
+      "src": "typicons"
+    },
+    {
+      "uid": "22cfc7af2c4f158b37317c65c92b48c2",
+      "css": "location",
+      "code": 59394,
+      "src": "elusive"
+    }
+  ]
+}
