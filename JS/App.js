@@ -6,6 +6,7 @@ const itemsAnimales = [
         precio: 350.00,
         img: "img/leon.jpg",
         descripcion: "León tejido en crochet.",
+        stock: 0,
     },
     {
         id: 2,
@@ -14,6 +15,7 @@ const itemsAnimales = [
         precio: 450.00,
         img:"img/elefantes.jpg",
         descripcion: "Elefante tejido en crochet, colores azúl y rosa.",
+        stock: 0,
     },
     {
         id: 3,
@@ -22,6 +24,7 @@ const itemsAnimales = [
         precio: 420.00,
         img: "img/frida.jpg",
         descripcion: "Perrito de rescate 'Frida' tejido en crochet.",
+        stock: 0,
     },
     {
         id: 4,
@@ -30,6 +33,7 @@ const itemsAnimales = [
         precio: 390.00,
         img: "img/koala.jpg",
         descripcion: "Koala tejido en crochet",
+        stock: 0,
     },
     {
         id: 5,
@@ -38,6 +42,7 @@ const itemsAnimales = [
         precio: 390.00,
         img: "img/Taz.jpg",
         descripcion: "Demonio de Tazmania tejido en crochet",
+        stock: 0,
     },
     {
         id: 6,
@@ -46,6 +51,7 @@ const itemsAnimales = [
         precio: 390.00,
         img: "img/unicornio.jpg",
         descripcion: "Unicornio bebé tejido en crochet",
+        stock: 0,
     },
 ];
 

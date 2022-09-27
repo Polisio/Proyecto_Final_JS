@@ -32,7 +32,6 @@ function vitrina() {
         shop.append(item);
 
         item.querySelector('button').addEventListener('click', ()=>{
-            addItem(itm.id);
         })
 
     })
@@ -42,14 +41,16 @@ function vitrina() {
 vitrina();
 
 
-function addItem(id){
+// function addItem(id){
 
-    let item = itemsAnimales.find(item => item.id === id);
+//     let item = itemsAnimales.find(item => item.id === id);
 
-    console.log(item);
+//     console.log(item);
 
-}
+// }
 
+// const existencia =  itemsAnimales.stock != 0 ? true : false;
+// existencia ? alert('Con existencias') : alert ('Agotado');
 
 
 
