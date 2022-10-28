@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Segunda Entrega Desafío Final</title>
+        <link rel="shortcut icon" href="src/favicon.png">
+        
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="CSS/main.css">
+        <link rel="stylesheet" href="CSS/cuchurrincon.css">
+    </head>
+    <body>
+        <header class="headerNav" id="inicio">
+			<h1 id="titulo" class="m-5">Tiendita de tejidos</h1>
+			<section class="">
+				<img src="./src/carShop.png" class="mt-3" height="90px" width="90px"id="boton-carrito"></img>
+			</section>
+
+        </header>
+        <div>
+            <h1>Artículos tejidos</h1>
+        </div>
+
+        <!-- Inicia main de JS -->
+        <main class="container-fluid">
+            <div id="shop" class="row">
+
+            </div>
+        </main>
+        <!-- Finaliza main de JS -->
+
+		<!-- Inicia Carrito Modal -->
+		<section class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+				<div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Carrito de compras</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+                    <div class="modal-body">
+						<div class="row text-center" id="carrito">
+
+						</div>
+                    </div>
+					<div class="modal-footer">
+						<div id="total"></div>
+					</div>
+				</div>
+			</div>
+        </section>
+		<!-- Finaliza Carrito Modal -->
+
+
+        <!-- Inicia formulario -->
+        <div class="container-fluid">
+			<div class="row">
+				<form id="formulario">
+					<div class="g-3 mt-3 col-11 col-md-4 col-lg-4">
+						<div class="form-control">
+							<label for="nombre" class="formStyle_1">Nombre</label>
+							<input type="text" placeholder="Laura Marcela García Corcuera y Rivadeneira" id="nombre">
+							<i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i>
+							<small>Error message.</small>
+						</div>
+						<div class="form-control">
+							<label for="email" class="formStyle_1">E-mail</label>
+							<input type="email" id="email" placeholder="layoyis@mail.com">
+							<i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i>
+							<small>Error message.</small>
+						</div>
+						<div class="form-control">
+							<label for="telefono" class="formStyle_1">Teléfono</label>
+							<input type="text" id="telefono" placeholder="3355441166">	
+							<i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i>
+							<small>Error message.</small>
+						</div>
+					</div>
+					<div class="g-3 mt-3 col-12 col-md-4 col-lg-4">
+						<div class="form-control">
+							<label for="domicilio" class="formStyle_1">Domicilio</label>
+							<input type="text" id="domicilio" placeholder="Calle y número">	
+							<i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i>
+							<small>Error message</small>
+						</div>
+						<div class="form-control">
+							<label for="colonia" class="formStyle_1">Colonia</label>
+							<input type="text" id="colonia" placeholder="Colonia">	
+							<i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i>
+							<small>Error message.</small>
+						</div>
+						<div class="form-control">
+							<label for="ciudadMunicipio" class="formStyle_1">Ciudad / Municipo</label>
+							<input type="text" id="ciudadMunicipio" placeholder="Ciudad / Municipo">	
+							<i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i>
+							<small>Error message.</small>
+						</div>
+					</div>
+					<div class="g-3 mt-3 col-12 col-md-4 col-lg-4">
+						<div class="form-control">
+							<label for="estado" class="formStyle_1">Estado</label>
+							<input type="text" id="estado" placeholder="Estado">	
+							<i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i>
+							<small>Error message.</small>
+						</div>
+						<div class="form-control">
+							<label for="codigoPostal" class="formStyle_1">Codigo Postal</label>
+							<input type="text" id="codigoPostal" placeholder="112233">	
+							<i class="fas fa-check-circle"></i>
+							<i class="fas fa-exclamation-circle"></i>
+							<small>Error message.</small>
+						</div>
+					</div>
+					<div class="form-control">
+						<label class="formStyle_1" for="referencias">Referencias</label>
+						<br>
+						<textarea class="textZone col-12" name="" id="referencias" cols="30" rows="10" placeholder="Por favor indica todas y cada una de las referencias para poder localizar de manera efectiva tu domicilio, así como las calles entre las que se encuentra. Si se requieren instrucciones adicionales para la entrega, por favor coloca cada una de ellas."></textarea>
+						<i class="fas fa-check-circle"></i>
+						<i class="fas fa-exclamation-circle"></i>
+						<small>Error message.</small>
+					</div>
+					<div id="grupo__terminos">
+						<label class="formulario__label">
+							<input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+							Todos los datos son correctos
+						</label>
+					</div>
+					<button class="botonSend" type="submit" id="enviar"><span>Enviar</span></button>
+				</form>
+			</div>
+		</div>
+
+        <!-- Finaliza formulario -->
+
+		<div class="contenedor">
+			<input type="checkbox" id="btn-mas">
+			<div class="redes">
+				<a href="https://www.facebook.com/El-cuchurrinc%C3%B3n-de-Solec%C3%ADn-226082697724631" class="icon-facebook" target="_blank"></a>
+				<a href="https://api.whatsapp.com/send?phone=525620408214" class="icon-whatsapp" target="_blank"></a>
+				<a href="#" class="icon-grocery-store"></a>
+			</div>
+			<div class="btn-mas">
+				<label for="btn-mas" class="icon-plus">	</label>
+			</div>
+		</div>
+
+		<div class="contenedorup">
+			<div>
+				<a href="#inicio">
+					<label class="icon-angle-circled-up"></label>
+				</a>
+			</div>
+		</div>
+
+		<!-- JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="JS/App.js"></script>
+        <script src="JS/main.js"></script>
+    </body>
+</html>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+        <div class="card">
+            <img src="..." class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            </div>
+        </div>
+    </div>
+</div>

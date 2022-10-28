@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Handlee&family=Henny+Penny&family=Merienda:wght@400;700&family=Original+Surfer&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Handlee&family=Henny+Penny&family=Merienda:wght@400;700&family=Original+Surfer&display=swap");
+
 .boton, .botonSend {
   display: inline-flex;
   align-items: center;
@@ -573,4 +574,43 @@ nav {
 
 .form-control.error small {
 	visibility: visible;
+} */
+
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #16384c;
+  flex-direction: column;
+}
+
+.card {
+  position: relative;
+  max-width: 260px;
+  padding: 20px 15px;
+  margin: 30px 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+}
+
+.card:hover{
+  height: auto;
+}
+
+.imgBx {
+  position: relative;
+}
+
+.styleCard {
+  max-width: 100%;
+  border-radius: 10px;
 }
