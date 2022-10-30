@@ -1,202 +1,211 @@
-let carrito = [];
+// let carrito = [];
 
-function vitrina() {
+// function vitrina() {
     
-    const contenido = document.getElementById('shop');
+//     const contenido = document.getElementById('shop');
 
-    itemsAnimales.forEach((itm) => {
-        let item = document.createElement("div");
-        item.classList.add('col-12');
-        item.classList.add('col-md-6');
-        item.classList.add('col-lg-4');
-        item.classList.add('col-xl-4');
-        item.innerHTML = `
-        <fieldset class="formStyle">
-        <a href="#" data-bs-toggle="modal" data-bs-target="#${itm.nombre}">
-        <img class="w-50 mb-4 rounded modalimg" src = ${itm.img} alt="${itm.descripcion}">
-        </a><br>
-        <div tabindex="-1" aria-labelledby="${itm.nombre}" aria-hidden="true" class="modal fade" id="${itm.nombre}">
-        <div class="modal-dialog modal-md modal-dialog-centered">
-            <div class="modal-content">
-                <img src="${itm.img}" alt="${itm.descripcion}">
-            </div>
-        </div>
-        </div>
-        <p class="style">${itm.nombre}</p><br>
-        <p class="style">${itm.descripcion}</p><br>
-        <label><b>Precio: $ ${itm.precio}</b></label><br>
-        <button class="boton" id="${itm.id}" type="submit"><span>Agregar</span></button>
-        </fieldset>
-        `;
+//     itemsAnimales.forEach((itm) => {
+//         let item = document.createElement("div");
+//         item.classList.add('col-12');
+//         item.classList.add('col-md-6');
+//         item.classList.add('col-lg-4');
+//         item.classList.add('col-xl-4');
+//         item.innerHTML = `
+//         <fieldset class="formStyle">
+//         <a href="#" data-bs-toggle="modal" data-bs-target="#${itm.nombre}">
+//         <img class="w-50 mb-4 rounded modalimg" src = ${itm.img} alt="${itm.descripcion}">
+//         </a><br>
+//         <div tabindex="-1" aria-labelledby="${itm.nombre}" aria-hidden="true" class="modal fade" id="${itm.nombre}">
+//         <div class="modal-dialog modal-md modal-dialog-centered">
+//             <div class="modal-content">
+//                 <img src="${itm.img}" alt="${itm.descripcion}">
+//             </div>
+//         </div>
+//         </div>
+//         <p class="style">${itm.nombre}</p><br>
+//         <p class="style">${itm.descripcion}</p><br>
+//         <label><b>Precio: $ ${itm.precio}</b></label><br>
+//         <button class="boton" id="${itm.id}" type="submit"><span>Agregar</span></button>
+//         </fieldset>
+//         `;
 
-        shop.append(item);
+//         shop.append(item);
 
-        item.querySelector('button').addEventListener('click', ()=>{
-            addItem(itm.id);
+//         item.querySelector('button').addEventListener('click', ()=>{
+//             addItem(itm.id);
 
-        })
+//         })
 
-    })
+//     })
 
-}
+// }
 
-vitrina();
+// vitrina();
 
 
-function addItem(id){
+// function addItem(id){
 
-    let item = itemsAnimales.find(item => item.id === id);
+//     let item = itemsAnimales.find(item => item.id === id);
 
-    let itemCesta = carrito.find(item => item.id === id);
+//     let itemCesta = carrito.find(item => item.id === id);
 
-    if(itemCesta){
+//     if(itemCesta){
 
-        itemCesta.cantidad++;
+//         itemCesta.cantidad++;
 
-        console.log(carrito);
+//         console.log(carrito);
         
-    }else {
+//     }else {
 
-        item.cantidad = 1;
+//         item.cantidad = 1;
 
-        carrito.push(item);
+//         carrito.push(item);
 
-        console.log(carrito);
+//         console.log(carrito);
+//     }
+
+//     actualizarCarrito();
+
+// }
+
+
+
+// function actualizarCarrito(){
+
+//     const dmt = document;
+//     let carritoHTML = dmt.querySelector('#carrito');
+
+//     carritoHTML.innerHTML = '';
+    
+//     carrito.forEach((itemCar, id) => {
+//         let itemCarrito = document.createElement("div");
+//         itemCarrito.classList.add('col-12');
+//         itemCarrito.classList.add('col-md-6');
+//         itemCarrito.classList.add('col-lg-4');
+//         itemCarrito.classList.add('col-xl-4');
+//         itemCarrito.innerHTML =`
+//         <div class="card text-dark" style="width: 18rem;">
+//             <img class="card-img-top" src="${itemCar.img}" alt="">
+//             <div class="card-body">
+//                 <h5 class="card-title">${itemCar.nombre}</h5>
+//                 <p>Precio: $ ${itemCar.precio}</p>
+//                 <p>Cantidad: ${itemCar.cantidad}</p>
+//                 <button class="boton"><span>Eliminar</>span></button>
+//             </div>
+//         </div>
+//         `;
+
+//         carritoHTML.appendChild(itemCarrito);
+
+//     })
+// }
+
+
+// //FORMULARIO//
+
+// const d = document;
+
+// const form = d.getElementById('formulario');
+// form.addEventListener('submit', (e) => {
+
+//     e.preventDefault();
+
+//     checkInputs();
+
+//     const nombre = d.getElementById('nombre').value;
+//     const email = d.getElementById('email').value;
+//     const telefono = d.getElementById('telefono').value;
+//     const domicilio = d.getElementById('domicilio').value;
+//     const colonia = d.getElementById('colonia').value;
+//     const ciudadMunicipio = d.getElementById('ciudadMunicipio').value;
+//     const estado = d.getElementById('estado').value;
+//     const codigoPostal = d.getElementById('codigoPostal').value;
+//     const referencias = d.getElementById('referencias').value;
+
+//     const datos = JSON.parse(localStorage.getItem("cliente")) || [];
+    
+//     const datosCliente = {
+//         nombre,
+//         email,
+//         telefono,
+//         domicilio,
+//         colonia,
+//         ciudadMunicipio,
+//         estado,
+//         codigoPostal,
+//         referencias
+//     }
+
+    
+//     datos.push(datosCliente);
+
+//     localStorage.setItem("Cliente", JSON.stringify(datos));
+
+//     datos.forEach((envio) => {
+//         envio = alert( envio.nombre + ' Tus datos han sido guardados para procesar tu envío a ' +envio.ciudadMunicipio+ ', ' +envio.estado+ ', en cuanto termines tu compra.');
+//     })
+
+//     console.log(datos);
+
+// })
+
+// function checkInputs() {
+//     const nombreValue = nombre.value.trim();
+//     const emailValor = email.value.trim();
+//     const telefonoValor = telefono.value.trim();
+//     const domicilioValor = domicilio.value.trim();
+//     const coloniaValor = colonia.value.trim();
+//     const ciudadMunicipioValor = ciudadMunicipio.value.trim();
+//     const estadoValor = estado.value.trim();
+//     const codigoPostalValor = codigoPostal.value.trim();
+//     const referenciasValor = referencias.value.trim();
+
+//     nombreValue === '' ? setErrorFor(nombre, 'El nombre no puede quedar vacío') : setSuccessFor(nombre);
+//     emailValor ==='' ? setErrorFor(email, 'Ingresa un correo válido.') : (!isEmail(emailValor)) ? setErrorFor(email, 'No ingresaste email válido.') : setSuccessFor(email);
+//     telefonoValor ==='' ? setErrorFor(telefono, 'Solo puedes ingresar números hasta 14 dígitos.') : (!isTelefono(telefonoValor)) ? setErrorFor(telefono, 'No ingresaste teléfono válido.') : setSuccessFor(telefono);
+//     domicilioValor ===''? setErrorFor(domicilio, 'Este campo no puede quedar vacío.') : setSuccessFor(domicilio);
+//     coloniaValor ===''? setErrorFor(colonia, 'Este campo no puede quedar vacío.') : setSuccessFor(colonia);
+//     ciudadMunicipioValor ===''? setErrorFor(ciudadMunicipio, 'Este campo no puede quedar vacío.') : setSuccessFor(ciudadMunicipio);
+//     estadoValor ===''? setErrorFor(estado, 'Este campo no puede quedar vacío.') : setSuccessFor(estado);
+//     codigoPostalValor ==='' ? setErrorFor(codigoPostal, 'Este campo no puede quedar vacío.') : (!isCodigoPostal(codigoPostalValor)) ? setErrorFor(codigoPostal, 'Solo puedes ingresar números hasta 5 dígitos.') : setSuccessFor(codigoPostal);
+//     referenciasValor ===''? setErrorFor(referencias, 'Ingresa la mayor cantidad de referencias para poder hacer el envío.') : setSuccessFor(referencias);
+// }
+
+// function setErrorFor(input, message) {
+//     const formControl = input.parentElement;
+//     const small = formControl.querySelector('small');
+//     formControl.className = 'form-control error';
+//     small.innerText = message;
+// }
+
+// function setSuccessFor(input){
+//     const formControl = input.parentElement;
+//     formControl.className = 'form-control success';
+// }
+
+// function isEmail(email) {
+// 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+// }
+
+// function isTelefono(telefono) {
+// 	return /^\d{7,14}$/.test(telefono);
+// }
+
+// function isCodigoPostal(codigoPostal) {
+// 	return /^\d{5}$/.test(codigoPostal);
+// }
+
+const doc = document
+let list = doc.getElementsByName('li');
+for (let i=0; i<list.length; i++){
+    list[i].onmouseover = function(){
+        let j = 0;
+        while (j < list.length){
+            list[j++].className = 'list';
+        }
+        list[i].className = 'list activeNav';
     }
-
-    actualizarCarrito();
-
 }
-
-
-
-function actualizarCarrito(){
-
-    const dmt = document;
-    let carritoHTML = dmt.querySelector('#carrito');
-
-    carritoHTML.innerHTML = '';
-    
-    carrito.forEach((itemCar, id) => {
-        let itemCarrito = document.createElement("div");
-        itemCarrito.classList.add('col-12');
-        itemCarrito.classList.add('col-md-6');
-        itemCarrito.classList.add('col-lg-4');
-        itemCarrito.classList.add('col-xl-4');
-        itemCarrito.innerHTML =`
-        <div class="card text-dark" style="width: 18rem;">
-            <img class="card-img-top" src="${itemCar.img}" alt="">
-            <div class="card-body">
-                <h5 class="card-title">${itemCar.nombre}</h5>
-                <p>Precio: $ ${itemCar.precio}</p>
-                <p>Cantidad: ${itemCar.cantidad}</p>
-                <button class="boton"><span>Eliminar</>span></button>
-            </div>
-        </div>
-        `;
-
-        carritoHTML.appendChild(itemCarrito);
-
-    })
-}
-
-
-//FORMULARIO//
-
-const d = document;
-
-const form = d.getElementById('formulario');
-form.addEventListener('submit', (e) => {
-
-    e.preventDefault();
-
-    checkInputs();
-
-    const nombre = d.getElementById('nombre').value;
-    const email = d.getElementById('email').value;
-    const telefono = d.getElementById('telefono').value;
-    const domicilio = d.getElementById('domicilio').value;
-    const colonia = d.getElementById('colonia').value;
-    const ciudadMunicipio = d.getElementById('ciudadMunicipio').value;
-    const estado = d.getElementById('estado').value;
-    const codigoPostal = d.getElementById('codigoPostal').value;
-    const referencias = d.getElementById('referencias').value;
-
-    const datos = JSON.parse(localStorage.getItem("cliente")) || [];
-    
-    const datosCliente = {
-        nombre,
-        email,
-        telefono,
-        domicilio,
-        colonia,
-        ciudadMunicipio,
-        estado,
-        codigoPostal,
-        referencias
-    }
-
-    
-    datos.push(datosCliente);
-
-    localStorage.setItem("Cliente", JSON.stringify(datos));
-
-    datos.forEach((envio) => {
-        envio = alert( envio.nombre + ' Tus datos han sido guardados para procesar tu envío a ' +envio.ciudadMunicipio+ ', ' +envio.estado+ ', en cuanto termines tu compra.');
-    })
-
-    console.log(datos);
-
-})
-
-function checkInputs() {
-    const nombreValue = nombre.value.trim();
-    const emailValor = email.value.trim();
-    const telefonoValor = telefono.value.trim();
-    const domicilioValor = domicilio.value.trim();
-    const coloniaValor = colonia.value.trim();
-    const ciudadMunicipioValor = ciudadMunicipio.value.trim();
-    const estadoValor = estado.value.trim();
-    const codigoPostalValor = codigoPostal.value.trim();
-    const referenciasValor = referencias.value.trim();
-
-    nombreValue === '' ? setErrorFor(nombre, 'El nombre no puede quedar vacío') : setSuccessFor(nombre);
-    emailValor ==='' ? setErrorFor(email, 'Ingresa un correo válido.') : (!isEmail(emailValor)) ? setErrorFor(email, 'No ingresaste email válido.') : setSuccessFor(email);
-    telefonoValor ==='' ? setErrorFor(telefono, 'Solo puedes ingresar números hasta 14 dígitos.') : (!isTelefono(telefonoValor)) ? setErrorFor(telefono, 'No ingresaste teléfono válido.') : setSuccessFor(telefono);
-    domicilioValor ===''? setErrorFor(domicilio, 'Este campo no puede quedar vacío.') : setSuccessFor(domicilio);
-    coloniaValor ===''? setErrorFor(colonia, 'Este campo no puede quedar vacío.') : setSuccessFor(colonia);
-    ciudadMunicipioValor ===''? setErrorFor(ciudadMunicipio, 'Este campo no puede quedar vacío.') : setSuccessFor(ciudadMunicipio);
-    estadoValor ===''? setErrorFor(estado, 'Este campo no puede quedar vacío.') : setSuccessFor(estado);
-    codigoPostalValor ==='' ? setErrorFor(codigoPostal, 'Este campo no puede quedar vacío.') : (!isCodigoPostal(codigoPostalValor)) ? setErrorFor(codigoPostal, 'Solo puedes ingresar números hasta 5 dígitos.') : setSuccessFor(codigoPostal);
-    referenciasValor ===''? setErrorFor(referencias, 'Ingresa la mayor cantidad de referencias para poder hacer el envío.') : setSuccessFor(referencias);
-}
-
-function setErrorFor(input, message) {
-    const formControl = input.parentElement;
-    const small = formControl.querySelector('small');
-    formControl.className = 'form-control error';
-    small.innerText = message;
-}
-
-function setSuccessFor(input){
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success';
-}
-
-function isEmail(email) {
-	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-}
-
-function isTelefono(telefono) {
-	return /^\d{7,14}$/.test(telefono);
-}
-
-function isCodigoPostal(codigoPostal) {
-	return /^\d{5}$/.test(codigoPostal);
-}
-
-
-
 
 
 
