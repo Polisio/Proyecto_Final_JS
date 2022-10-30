@@ -22,13 +22,32 @@
 		<header>
 			<!-- Inicia Navbar -->
 			<nav>
+				<div class="wrapperNav">
+					<div class="iconNav home">
+						<span class="spanNav"><a href="index.html" class="bi bi-house aNav"></a></span>
+						<div class="tooltipNav">Home</div>
+					</div>
+					<div class="iconNav tienda">
+						<div class="tooltipNav">Tienda</div>
+						<span class="spanNav"><a href="./views/tienda.html" class="bi bi-shop aNav"></a></span>
+					</div>
+					<div class="iconNav contacto">
+						<div class="tooltipNav">Contacto</div>
+						<span class="spanNav"><a href="./views/contacto.html" class="bi bi-geo-alt aNav"></a></span>
+					</div>
+					<div class="iconNav carrito">
+						<div class="tooltipNav">Carrito</div>
+						<span class="spanNav"><a href="./views/carrito.html" class="bi bi-cart2 aNav"></a></span>
+					</div>
+				</div>
 			</nav>
+
 			<!-- Finaliza Navbar -->
 		</header>
 		<br>
 		<main>
 			<!-- Inicia carousel -->
-			<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+			<!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
 				<div class="carousel-indicators">
 					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
 					<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -65,7 +84,7 @@
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="visually-hidden">Next</span>
 				</button>
-			</div>
+			</div> -->
 			<!-- Finaliza carousel -->
 		</main>
 		<!-- Inicia card de cuerpo -->
@@ -97,24 +116,25 @@
 		<!-- Finaliza video de tiktok -->
 		<br>
 		<br>
-		<footer>
+		<footer class="styleFooter">
 			<div class="wrapper">
 				<div class="icon face">
 					<div class="tooltip">Face</div>
-					<span><a href="https://www.facebook.com/profile.php?id=100068507282095" target="_blank" class="bi bi-facebook"></a></span>
+					<span class="spanFoot"><a href="https://www.facebook.com/profile.php?id=100068507282095" target="_blank" class="bi bi-facebook aFoot"></a></span>
 				</div>
 				<div class="icon tik">
 					<div class="tooltip">TikTok</div>
-					<span><a href="https://www.tiktok.com/@elcuchurincondesolecin?is_from_webapp=1&sender_device=pc" target="_blank" class="bi bi-tiktok"></a></span>
+					<span class="spanFoot"><a href="https://www.tiktok.com/@elcuchurincondesolecin?is_from_webapp=1&sender_device=pc" target="_blank" class="bi bi-tiktok aFoot"></a></span>
 				</div>
 				<div class="icon whats">
 					<div class="tooltip">Whats</div>
-					<span><a href="https://api.whatsapp.com/send?phone=525620408214" target="_blank" class="bi bi-whatsapp"></a></span>
+					<span class="spanFoot"><a href="https://api.whatsapp.com/send?phone=525620408214" target="_blank" class="bi bi-whatsapp aFoot"></a></span>
 				</div>
 			</div>
 		</footer>
 		
 		<!-- JavaScript -->
+		<link rel="stylesheet" href="./JS/main.js">
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     </body>
 </html>
@@ -122,9 +142,42 @@
 
 
 
-<!-- <div class="side">
-	<i class="bi bi-house-door active" onclick="clicked(this)"></i>
-<i class="bi bi-shop" onclick="clicked(this)"></i>
-<i class="bi bi-geo-alt" onclick="clicked(this)"></i>
-<i class="bi bi-cart2" onclick="clicked(this)"></i>
-</div> -->
+<!-- <ul>
+	<li class="list activeNav">
+		<a href="">
+			<span class="iconNav"><i class="bi bi-house"></i></span>
+			<span class="title">Home</span>
+		</a>
+	</li>
+	<li class="list">
+		<a href="">
+			<span class="iconNav"><i class="bi bi-shop"></i></span>
+			<span class="title">Tienda</span>
+		</a>
+	</li>
+	<li class="list">
+		<a href="">
+			<span class="iconNav"><i class="bi bi-geo-alt"></i></span>
+			<span class="title">Contacto</span>
+		</a>
+	</li>
+	<li class="list">
+		<a href="">
+			<span class="iconNav"><i class="bi bi-cart2"></i></span>
+			<span class="title">Carrito</span>
+		</a>
+	</li>
+	<div class="indicador"></div>
+</ul>
+<script>
+	let list = document.querySelectorAll('li');
+	for (let i=0; i<list.length; i++){
+		list[i].onmouseover = function(){
+			let j = 0;
+			while (j < list.length){
+				list[j++].className = 'list';
+			}
+			list[i].className = 'list activeNav';
+		}
+	}
+</script> -->

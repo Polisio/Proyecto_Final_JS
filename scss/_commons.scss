@@ -17,11 +17,12 @@ html{
 body{
     display: flex;
     justify-content: center;
-    margin: 0 auto 60px 0;
-    align-items: center;
-    background-color: $backgroundColorBody;
+    margin: 0 auto 60px; 
+    align-items: center; 
+    background-color: rgb(214,214,214);
     flex-direction: column;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
+    z-index: -1;
 }
 
 .card{
@@ -37,63 +38,144 @@ body{
 
 //Header
 header{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    width: 100%;
+    display: grid;
     height: 100%;
-    padding: 10px;
-    background: $backgroundColorOne;
+    width: 100%;
+    place-items: center;
+    background: linear-gradient(rgb(91,192,217), rgb(214,214,214));
 }
 
-//Nav Bar
+//NavBar
 
-// .side{
-//     background-color: rgb(46, 46, 46);
-//     max-width: max-content;
-//     position: absolute;
-//     left: 0;
-//     right: 0;
-//     margin-left: auto;
-//     margin-right: auto;
-//     top: 30px;
-//     margin-bottom: 15px;
-//     border-radius: 10px;
-//     box-shadow: 0 -5px rgba(50,50,50,0.8);
-//     i{
-//         font-size: 2em;
-//         padding: 0.5em;
-//         color: white;
-//     }
-//     .active{
-//         background-color: rgb(56, 56, 56);
-//         border-radius: 30%;
-//         color: rgb(13, 161, 230);
-//         transition: 0.6s;
-//         text-shadow: 6xp 6px 6xp rgb(255, 255, 255), -6px -6px -6px rgb(172, 172, 172);
-//     }
-// }
+.wrapperNav{
+    display: flex;
+    text-decoration: none;
+    .iconNav{
+        margin: 0 5px;
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+        flex-direction: column;
+        position: relative;
+        z-index: 2;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+        &:hover .tooltipNav{
+            opacity: 1;
+            bottom: -55px;
+            pointer-events: auto;
+        }
+        .tooltipNav{
+        position: absolute;
+        bottom: -55px;
+        background: rgb(214,214,214);
+        color:rgb(214,214,214);
+        font-family: $mainFont;
+        font-size: $textMD;
+        padding: 10px 18px;
+        border-radius: 25px;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+            &::before{
+                text-decoration: none;
+                position: absolute;
+                content: '';
+                height: 10px;
+                width: 10px;
+                background-color: #ffffff;
+                top: -5px;
+                left: 50%;
+                transform: translateX(-50%) rotate(45deg);
+                transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+                z-index: 2;
+            }
+        }
+        .spanNav{
+            position: relative;
+            height: 50px;
+            width: 50px;
+            display: block;
+            background: #fff;
+            align-items: center;
+            justify-items: center;
+            text-align: center;
+            border-radius: 50%;
+            z-index: 2;
+            box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+            .aNav{
+                font-size: 23px;
+                line-height: 50px;
+                color: #4d4d4d;
+            }
+        }
+    }
+}
+
+.wrapperNav .iconNav:hover .spanNav .aNav{
+        color: #fff;
+        text-decoration: none;
+}
+
+.wrapperNav .iconNav:hover .spanNav .aNav,
+.wrapperNav .iconNav:hover .tooltipNav{
+    text-shadow: 0 -1px 0px rgba(0,0,0,0.4);
+}
+
+.wrapperNav .home:hover .spanNav,
+.wrapperNav .home:hover .tooltipNav,
+.wrapperNav .home:hover .tooltipNav::before{
+    background: rgb(58, 104, 134);
+}
+
+.wrapperNav .tienda:hover .spanNav,
+.wrapperNav .tienda:hover .tooltipNav,
+.wrapperNav .tienda:hover .tooltipNav::before{
+    background: rgb(58, 104, 134);
+}
+
+.wrapperNav .contacto:hover .spanNav,
+.wrapperNav .contacto:hover .tooltipNav,
+.wrapperNav .contacto:hover .tooltipNav::before{
+    background: rgb(58, 104, 134);
+}
+
+.wrapperNav .carrito:hover .spanNav,
+.wrapperNav .carrito:hover .tooltipNav,
+.wrapperNav .carrito:hover .tooltipNav::before{
+    background: rgb(58, 104, 134);
+}
+
 
 
 //Footer
 
 footer{
     position: absolute;
-    margin-top: 0;
+    margin-top: auto;
     left: 0;
-    bottom: 20px;
+    bottom: 0;
     width: 100%;
-    height: 50px;
     display: flex;
-    flex-direction: inline;
-    background-color: #fff;
-    min-height: 30px;
+    background: linear-gradient(rgb(214,214,214), rgb(91,192,217));
     justify-content: center;
-    justify-items: center;
     align-items: center;
-    padding-top: 15px;
-    z-index: -1;
+    padding: 10px;
+}
+
+.footerShop{
+    position: absolute;
+    margin-top: auto;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    background: linear-gradient(rgb(214,214,214), rgb(111,204,207));
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
 }
 
 .wrapper{
@@ -101,7 +183,7 @@ footer{
     text-decoration: none;
     .icon{
         margin: 0 10px;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         display: flex;
         align-items: center;
         justify-items: center;
@@ -118,8 +200,8 @@ footer{
         .tooltip{
         position: absolute;
         top: 0px;
-        background: rgb(255, 255, 255);
-        color:#fff;
+        background: rgb(214,214,214);
+        color:rgb(214,214,214);
         font-family: $mainFont;
         font-size: $textMD;
         padding: 10px 18px;
@@ -141,7 +223,7 @@ footer{
                 transition: all 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
             }
         }
-        span{
+        .spanFoot{
             position: relative;
             height: 60px;
             width: 60px;
@@ -151,9 +233,9 @@ footer{
             justify-items: center;
             text-align: center;
             border-radius: 50%;
-            z-index: 2;
+            z-index: 5;
             box-shadow: 0 10px 10px rgba(0,0,0,0.5);
-            a{
+            .aFoot{
                 font-size: 23px;
                 line-height: 60px;
                 color: #4d4d4d;
@@ -162,17 +244,17 @@ footer{
     }
 }
 
-.wrapper .icon:hover span a{
+.wrapper .icon:hover .spanFoot .aFoot{
         color: #fff;
         text-decoration: none;
 }
 
-.wrapper .icon:hover span a,
+.wrapper .icon:hover .spanFoot .aFoot,
 .wrapper .icon:hover .tooltip{
     text-shadow: 0 -1px 0px rgba(0,0,0,0.4);
 }
 
-.wrapper .face:hover span,
+.wrapper .face:hover .spanFoot,
 .wrapper .face:hover .tooltip,
 .wrapper .face:hover .tooltip::before{
     background: #4267b2;
@@ -183,12 +265,12 @@ footer{
     background: #000000;
 }
 
-.wrapper .tik:hover span{
+.wrapper .tik:hover .spanFoot{
     background: #000000;
     box-shadow: 10px 0px 15px rgba(254, 44, 85, 0.8), -10px 0px 15px rgba(37, 244, 238, 0.8);
 }
 
-.wrapper .whats:hover span,
+.wrapper .whats:hover .spanFoot,
 .wrapper .whats:hover .tooltip,
 .wrapper .whats:hover .tooltip::before{
     background: #075E54;
@@ -242,3 +324,127 @@ img{
     font-weight: 400;
     color: $textColor;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .navigation{
+//     position: relative;
+//     width: 70px;
+//     height: 300px;
+//     background: #fff;
+//     border-radius: 35px;
+//     box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+//     ul{
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         display: flex;
+//         flex-direction: column;
+//         padding: 0;
+//         li{
+//             position: relative;
+//             list-style: none;
+//             width: 70px;
+//             height: 70px;
+//             z-index: 1;
+//             a{
+//                 position: relative;
+//                 display: flex;
+//                 justify-content: center;
+//                 align-items: center;
+//                 width: 100%;
+//                 text-align: center;
+//                 color: #333;
+//                 font-weight: 500;
+//                 .iconNav{
+//                     position: relative;
+//                     display: block;
+//                     line-height: 75px;
+//                     text-align: center;
+//                     transition: 0.5s;
+//                     i{
+//                         font-size: 30px;
+//                     }
+//                 }
+//                 .title{
+//                     position: absolute;
+//                     top: 50%;
+//                     left: 110px;
+//                     font-family: $mainFont;
+//                     font-size: $textSm;
+//                     background: #fff;
+//                     transform: translateY(-50%);
+//                     padding: 5px 5px;
+//                     border-radius: 6px;
+//                     transition: 0.5s;
+//                     box-shadow: rgba(0,0,0,0.1);
+//                     opacity: 0;
+//                     visibility: hidden;
+//                 }
+//             }
+//         }
+//         .indicador{
+//             position: absolute;
+//             left: 0;
+//             width: 70px;
+//             height: 70px;
+//             transition: 0.5s;
+//         }
+//     }
+// }
+
+// .navigation ul li .activeNav a .bi,.bi-house{
+//     color: #fff;
+// }
+
+// .navigation ul li:hover a .title{
+//     opacity: 1;
+//     visibility: visible;
+//     transform: translateX(-25px) translateY(-50%); 
+// }
+
+// .navigation ul .indicador::before{
+//     content: '';
+//     position: absolute;
+//     top: 55%;
+//     left: 50%;
+//     transform: translate(-50%,-50%);
+//     width: 50px;
+//     height: 50px;
+//     background: #333;
+//     border-radius: 50%;
+//     transition: 0.5s;
+// }
+
+// .navigation ul li a .title::before{
+//     content: '';
+//     position: absolute;
+//     width: 12px;
+//     height: 12px;
+//     background: #fff;
+//     left: -8px;
+//     top: 46%;
+//     transition: 0.5s;
+//     transform: rotate(45deg) translateY(-50%);
+//     border-radius: 2px;
+//     z-index: -1;
+// }
