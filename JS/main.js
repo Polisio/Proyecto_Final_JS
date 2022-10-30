@@ -195,19 +195,6 @@
 // 	return /^\d{5}$/.test(codigoPostal);
 // }
 
-const doc = document
-let list = doc.getElementsByName('li');
-for (let i=0; i<list.length; i++){
-    list[i].onmouseover = function(){
-        let j = 0;
-        while (j < list.length){
-            list[j++].className = 'list';
-        }
-        list[i].className = 'list activeNav';
-    }
-}
-
-
 
 
 

@@ -12,7 +12,6 @@ body {
   justify-content: center;
   margin: 0 auto 60px;
   align-items: center;
-  background-color: #d6d6d6;
   flex-direction: column;
   padding-bottom: 50px;
   z-index: -1; }
@@ -32,7 +31,7 @@ header {
   height: 100%;
   width: 100%;
   place-items: center;
-  background: linear-gradient(#5bc0d9, #d6d6d6); }
+  background: linear-gradient(#5bc0d9, white); }
 
 .wrapperNav {
   display: flex;
@@ -129,22 +128,10 @@ footer {
   bottom: 0;
   width: 100%;
   display: flex;
-  background: linear-gradient(#d6d6d6, #5bc0d9);
+  flex-direction: column;
+  background: linear-gradient(white, #5bc0d9);
   justify-content: center;
-  align-items: center;
-  padding: 10px; }
-
-.footerShop {
-  position: absolute;
-  margin-top: auto;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  background: linear-gradient(#d6d6d6, #6fcccf);
-  justify-content: center;
-  align-items: center;
-  padding: 10px; }
+  align-items: center; }
 
 .wrapper {
   display: flex;
