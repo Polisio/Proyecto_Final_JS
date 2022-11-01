@@ -223,7 +223,10 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Nunito", sans-serif; }
+  font-family: "Nunito", sans-serif;
+  font-size: 1.6em;
+  text-shadow: 0 1px #3c7080;
+  text-align: left; }
 
 h1 {
   font-size: 1.6em;

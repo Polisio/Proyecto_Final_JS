@@ -1,62 +1,50 @@
 [
     {
-        "i": 1,
+        "id": 1,
         "categoria": "Animales",
         "nombre": "León",
         "precio": 350.00,
         "img": "../img/leon.jpg",
-        "descripcion": "León tejido.",
-        "stock": 0,
-        "cantidad": 0,
+        "descripcion": "León tejido."
     },
     {
         "id": 2,
         "categoria": "Animales",
         "nombre": "Elefantes",
         "precio": 450.00,
-        "img":"img/elefantes.jpg",
-        "descripcion": "Elefantes tejidos colores azúl y rosa.",
-        "stock": 0,
-        "cantidad": 0,
+        "img":"../img/elefantes.jpg",
+        "descripcion": "Elefantes tejidos colores azúl y rosa."
     },
     {
         "id": 3,
         "categoria": "Animales",
         "nombre": "Frida",
         "precio": 420.00,
-        "img": "img/frida.jpg",
-        "descripcion": "Perrito de rescate 'Frida'.",
-        "stock": 0,
-        "cantidad": 0,
+        "img": "../img/frida.jpg",
+        "descripcion": "Perrito de rescate 'Frida'."
     },
     {
         "id": 4,
         "categoria": "Animales",
         "nombre": "Koala",
         "precio": 390.00,
-        "img": "img/koala.jpg",
-        "descripcion": "Koala tejido.",
-        "stock": 0,
-        "cantidad": 0,
+        "img": "../img/koala.jpg",
+        "descripcion": "Koala tejido."
     },
     {
         "id": 5,
         "categoria": "Animales",
         "nombre": "Taz",
         "precio": 390.00,
-        "img": "img/Taz.jpg",
-        "descripcion": "Demonio de Tazmania tejido.",
-        "stock": 0,
-        "cantidad": 0,
+        "img": "../img/Taz.jpg",
+        "descripcion": "Demonio de Tazmania tejido."
     },
     {
         "id": 6,
         "categoria": "Animales",
         "nombre": "Unicornio",
         "precio": 390.00,
-        "img": "img/unicornio.jpg",
-        "descripcion": "Unicornio bebé tejido.",
-        "stock": 0,
-        "cantidad": 0,
-    },
-];
+        "img": "../img/unicornio.jpg",
+        "descripcion": "Unicornio bebé tejido."
+    }
+]

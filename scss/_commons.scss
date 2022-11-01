@@ -269,6 +269,9 @@ h3,
 h4,
 h5{
     font-family: $mainFont;
+    font-size: $textLg;
+    text-shadow: 0 1px $textColor;
+    text-align: left;
 }
 
 h1{
