@@ -23,7 +23,7 @@ const insertarTemplate = (data) => {
     const fragment = new DocumentFragment();
     data.forEach((producto) => {
         template.querySelector("img").setAttribute("src", producto.img);
-        template.querySelector("h5").textContent = producto.title;
+        template.querySelector("h5").textContent = producto.nombre;
         template.querySelector(".card-text span").textContent = producto.precio;
 
         template.querySelector("button").setAttribute("data-id", producto.id);
@@ -66,7 +66,7 @@ const eventoBotones = (data) => {
                 carrito.push(productoCarrito);
             }
         
-            pintarEnCarrito();
+            insertarEnCarrito();
         });
     });
 };
@@ -97,12 +97,12 @@ const totalFooter = () => {
     const vaciarCarrito = document.querySelector('#vaciar-carrito')
     vaciarCarrito.addEventListener('click', () => {
         carrito = []
-        pintarEnCarrito()
+        insertarEnCarrito()
     })
 }
 
 
-const pintarEnCarrito = () => {
+const insertarEnCarrito = () => {
 
 
     itemsCarrito.innerHTML = ''
@@ -113,7 +113,7 @@ const pintarEnCarrito = () => {
 
     carrito.forEach(item => {
         template.querySelector("th").textContent = item.id;
-        template.querySelectorAll("td")[0].textContent = item.title;
+        template.querySelectorAll("td")[0].textContent = item.nombre;
         template.querySelectorAll("td")[1].textContent = item.cantidad;
         template.querySelector('.btn-danger').setAttribute('data-id', item.id)
         template.querySelector('.btn-info').setAttribute('data-id', item.id)
@@ -147,7 +147,7 @@ const borrarItemCarrito = () => {
             })
 
             carrito = [...arrayFiltrado]
-            pintarEnCarrito()
+            insertarEnCarrito()
             totalFooter()
         })
     })
@@ -169,7 +169,7 @@ const borrarItemCarrito = () => {
             })
 
             carrito = [...arrayFiltrado]
-            pintarEnCarrito()
+            insertarEnCarrito()
             totalFooter()
         })
     })
