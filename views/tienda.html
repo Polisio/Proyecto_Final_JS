@@ -42,78 +42,95 @@
 			<!-- Finaliza Navbar -->
 		</header>
 		<br>
-		<br>
         <main>
 			<div class="container">
 				<h1 class="mt-2">Nuestra Tienda</h1>
 		
-			<div class="row my-5" id="lista-productos">
-				<template id="template-producto">
-				<div class="col-12 col-sm-4 col-md-3 col-lg-2 mb-3">
-					<div class="card">
-					<img src="" alt="" class="card-img-top" />
-					<div class="card-body">
-						<h5 class="card-title"></h5>
-						<p class="card-text">$ <span></span></p>
-						<button class="btn btn-dark">Comprar</button>
+				<div class="row my-5" id="lista-productos">
+					<template id="template-producto">
+					<div class="col-12 col-sm-4 col-md-4 col-lg-2 mb-3">
+						<div class="card" style="align-items: center;">
+						<img src="" alt="" class="card-img-top" />
+						<div class="card-body">
+							<h5 class="card-title"></h5>
+							<p class="card-text">$ <span></span></p>
+							<button class="btn btn-dark" id="btnComp">Comprar</button>
+						</div>
+						</div>
 					</div>
-					</div>
+					</template>
 				</div>
+			
+				<div class="my-5" id="iniciaCarrito">
+					<h4>Carrito de compras</h4>
+					<table class="table">
+					<thead>
+						<tr>
+						<th scope="col">#</th>
+						<th scope="col">Item</th>
+						<th scope="col">Cantidad</th>
+						<th scope="col">Modificar</th>
+						<th scope="col">Total</th>
+						</tr>
+					</thead>
+					<tbody id="items"></tbody>
+					<tfoot>
+						<tr id="footer-carrito">
+							<th scope="row" colspan="5">Carrito vacío - agrega algo para comprar!</th>
+						</tr>
+					</tfoot>
+					</table>
+				</div>
+			</div>
+			
+				<template id="template-footer">
+					<th scope="row" colspan="2">Total productos</th>
+					<td>10</td>
+					<td>
+						<button class="btn btn-danger btn-sm" id="vaciar-carrito">
+							vaciar todo
+						</button><br><br>
+						<button class="btn btn-danger btn-sm" id="Comprar-carrito">
+							Hacer Pedido
+						</button>
+					</td>
+					<td class="font-weight-bold">$ <span>5000</span></td>
 				</template>
-			</div>
-		
-			<div class="my-5">
-				<h4>Carrito de compras</h4>
-				<table class="table">
-				<thead>
-					<tr>
-					<th scope="col">#</th>
-					<th scope="col">Item</th>
-					<th scope="col">Cantidad</th>
-					<th scope="col">Acción</th>
-					<th scope="col">Total</th>
-					</tr>
-				</thead>
-				<tbody id="items"></tbody>
-				<tfoot>
-					<tr id="footer-carrito">
-						<th scope="row" colspan="5">Carrito vacío - agrega algo para comprar!</th>
-					</tr>
-				</tfoot>
-				</table>
-			</div>
-			</div>
-		
-			<template id="template-footer">
-				<th scope="row" colspan="2">Total productos</th>
-				<td>10</td>
-				<td>
-					<button class="btn btn-danger btn-sm" id="vaciar-carrito">
-						vaciar todo
-					</button>
-				</td>
-				<td class="font-weight-bold">$ <span>5000</span></td>
-			</template>
-		
-			<template id="template-carrito">
-			<tr>
-				<th scope="row">1</th>
-				<td>Café</td>
-				<td>1</td>
-				<td>
-					<button class="btn btn-info btn-sm">
-						+
-					</button>
-					<button class="btn btn-danger btn-sm">
-						-
-					</button>
-				</td>
-				<td>$500</td>
-			</tr>
-			</template>
-		
-			<script src="../JS/main.js"></script>
+			
+				<template id="template-carrito">
+				<tr>
+					<th scope="row">1</th>
+					<td>Café</td>
+					<td>1</td>
+					<td>
+						<button class="btn btn-info btn-sm">
+							+
+						</button>
+						<button class="btn btn-danger btn-sm">
+							-
+						</button>
+					</td>
+					<td>$500</td>
+				</tr>
+				</template>
 
+				<!-- Formulario -->
+
+				<div>
+					<form id="formularioDisfraz">
+						<label for="nombre" class="mb-2">Nombre</label>
+						<input class="form-control mb-2" type="text" name="nombre" placeholder="Laura Marcela García Corcuera y Rivadeneira" id="nombre">
+
+						<label	label for="telefono" class="mb-2">Teléfono</label>
+						<input class="form-control mb-2" type="number" name="telefono" placeholder="5533668844" min="10" max="14" autocomplete="off" id="telefono">
+
+						<label for="correo" class="mb-2">E-mail</label>
+						<input class="form-control mb-2" type="email" name="correo" placeholder="layoyis@correo.com" autocomplete="off" id="correo">
+
+						<button type="submit" class="btn btn-dark mb-2">Enviar</button>
+					</form>
+				</div>
+			<script src="../JS/main.js"></script>
 		</main>
 		<footer>
 			<div class="wrapper">

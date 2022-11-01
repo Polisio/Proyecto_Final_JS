@@ -16,6 +16,9 @@ body {
   padding-bottom: 50px;
   z-index: -1; }
 
+.container {
+  align-items: center; }
+
 .card {
   position: relative;
   max-width: 260px;
@@ -31,7 +34,8 @@ header {
   height: 100%;
   width: 100%;
   place-items: center;
-  background: linear-gradient(#5bc0d9, white); }
+  background: linear-gradient(#5bc0d9, white);
+  margin-bottom: 30px; }
 
 .wrapperNav {
   display: flex;
@@ -218,13 +222,12 @@ footer {
 .wrapper .whats:hover .tooltip::before {
   background: #075E54; }
 
-h1,
 h2,
 h3,
 h4,
 h5 {
   font-family: "Nunito", sans-serif;
-  font-size: 1.6em;
+  font-size: 1em;
   text-shadow: 0 1px #3c7080;
   text-align: left; }
 
@@ -233,12 +236,6 @@ h1 {
   color: #3c7080;
   text-shadow: 0 1px #3c7080;
   text-align: center; }
-
-h2,
-h3,
-h4,
-h5 {
-  font-size: 0.8em; }
 
 p {
   font-family: "Rubik", sans-serif;
