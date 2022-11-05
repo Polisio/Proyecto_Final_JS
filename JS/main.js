@@ -187,24 +187,75 @@ const borrarItemCarrito = () => {
 
 //Formulario Disfraz
 
-const formularioDisfraz = document.getElementById('formularioDisfraz')
-const nombre = document.getElementById('nombre')
-const telefono = document.getElementById('telefono')
-const correo = document.getElementById('correo')
+const formularioDis = document.getElementById('formularioDisfraz')
 
-formularioDisfraz.addEventListener('submit', e => {
+const nombre = document.getElementById('nombre');
+const telefono = document.getElementById('telefono');
+const correo = document.getElementById('correo');
+
+const regNombre = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+const regCorreo = /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
+const regTelefono = /^\d{7,14}$/;
+
+formularioDis.addEventListener('submit', e => {
     e.preventDefault();
 
+if (!regNombre.test(nombre.value) || !nombre.value.trim()) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Formato inválido',
+        footer: 'Solo puedes ingresar letras'
+    })
+    return;
+}
+
+if (!regTelefono.test(telefono.value) || !telefono.value.trim()) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Formato inválido',
+        footer: 'Ingresa un número válido'
+    })
+    return;
+} 
+
+if (!regCorreo.test(correo.value) || !correo.value.trim()) {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Formato inválido',
+        footer: 'Ingresa un correo válido'
+    })
+    return;
+
+} else {
+        Swal.fire({
+            icon: 'success',
+            title: 'Muchas gracias ' + nombre.value,
+            text: 'En breve nos pondremos en contacto',
+            footer: 'Te haremos llegar todas las instrucciones para finalizar tu compra'
+        })
+
+    }
+
+    const nombreCliente = document.getElementById('nombre').value;
+    const telefonoCliente = document.getElementById('telefono').value;
+    const correoCliente = document.getElementById('correo').value;
+
+    const inputData = JSON.parse(localStorage.getItem("cliente")) || [];
+
+    const datosCliente = {
+        nombreCliente,
+        telefonoCliente,
+        correoCliente
+    }
+
+    inputData.push(datosCliente);
+
+    localStorage.setItem("Cliente", JSON.stringify(inputData));
+
 })
-
-
-
-
-
-
-
-
-
 
 
 
@@ -245,24 +296,24 @@ formularioDisfraz.addEventListener('submit', e => {
 //     const codigoPostal = d.getElementById('codigoPostal').value;
 //     const referencias = d.getElementById('referencias').value;
 
-//     const datos = JSON.parse(localStorage.getItem("cliente")) || [];
+    // const datos = JSON.parse(localStorage.getItem("cliente")) || [];
     
-//     const datosCliente = {
-//         nombre,
-//         email,
-//         telefono,
-//         domicilio,
-//         colonia,
-//         ciudadMunicipio,
-//         estado,
-//         codigoPostal,
-//         referencias
-//     }
+    // const datosCliente = {
+    //     nombre,
+    //     email,
+    //     telefono,
+    //     domicilio,
+    //     colonia,
+    //     ciudadMunicipio,
+    //     estado,
+    //     codigoPostal,
+    //     referencias
+    // }
 
     
-//     datos.push(datosCliente);
+    // datos.push(datosCliente);
 
-//     localStorage.setItem("Cliente", JSON.stringify(datos));
+    // localStorage.setItem("Cliente", JSON.stringify(datos));
 
 //     datos.forEach((envio) => {
 //         envio = alert( envio.nombre + ' Tus datos han sido guardados para procesar tu envío a ' +envio.ciudadMunicipio+ ', ' +envio.estado+ ', en cuanto termines tu compra.');

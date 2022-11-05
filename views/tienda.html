@@ -14,6 +14,14 @@
         
         <!-- CSS -->
         <link rel="stylesheet" href="../CSS/main.css">
+
+		<!-- EmailJS -->
+		<script type="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+		<script type="text/javascript">
+			emailjs.init('8DHAkZxrxMTBdI_Ru')
+		</script>
     </head>
     <body>
 		<header>
@@ -90,9 +98,6 @@
 						<button class="btn btn-danger btn-sm" id="vaciar-carrito">
 							vaciar todo
 						</button><br><br>
-						<button class="btn btn-danger btn-sm" id="Comprar-carrito">
-							Hacer Pedido
-						</button>
 					</td>
 					<td class="font-weight-bold">$ <span>5000</span></td>
 				</template>
@@ -122,12 +127,12 @@
 						<input class="form-control mb-2" type="text" name="nombre" placeholder="Laura Marcela García Corcuera y Rivadeneira" id="nombre">
 
 						<label	label for="telefono" class="mb-2">Teléfono</label>
-						<input class="form-control mb-2" type="number" name="telefono" placeholder="5533668844" min="10" max="14" autocomplete="off" id="telefono">
+						<input class="form-control mb-2" type="number" name="telefono" placeholder="5533668844" autocomplete="off" id="telefono">
 
 						<label for="correo" class="mb-2">E-mail</label>
 						<input class="form-control mb-2" type="email" name="correo" placeholder="layoyis@correo.com" autocomplete="off" id="correo">
 
-						<button type="submit" class="btn btn-dark mb-2">Enviar</button>
+						<button type="submit" class="btn btn-dark mb-2">Comprar</button>
 					</form>
 				</div>
 			<script src="../JS/main.js"></script>
